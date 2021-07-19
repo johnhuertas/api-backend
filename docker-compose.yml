@@ -33,6 +33,7 @@ services:
             MYSQL_ALLOW_EMPTY_PASSWORD: ok
             MYSQL_USER: $MYSQL_USER
             MYSQL_PASSWORD: $MYSQL_PASSWORD
+            MYSQL_ROOT_HOST: '%'
            
         ports:
             - $MYSQL_LOCAL_PORT:$MYSQL_DOCKER_PORT

@@ -19,3 +19,8 @@ exports.consultarTodos = async function () {
 exports.crearEmpleado = async function (id, nombre, cargo, jefe) {
     await db.query("INSERT INTO empleados(id, nombre, cargo, jefe) VALUES (?, ?, ?, ?)", [id, nombre, cargo, jefe]);
 }
+
+exports.revisionExiste = async function (id) {
+    const result = await db.query("SELECT * FROM empleados WHERE id=?", id);
+    return result[0];
+}
