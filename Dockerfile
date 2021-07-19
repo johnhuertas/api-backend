@@ -1,7 +1,5 @@
-FROM node:12
-RUN mkdir /api
-COPY ./ /api
-WORKDIR /api
+FROM node:latest
+WORKDIR /app/
+COPY package.json .
 RUN npm install
-EXPOSE 3000
-CMD ["npm", "start"]
+COPY . .
